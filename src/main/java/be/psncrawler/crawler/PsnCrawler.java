@@ -27,8 +27,7 @@ public class PsnCrawler extends WebCrawler {
     public boolean shouldVisit(Page referringPage, WebURL url) {
         String href = url.getURL().toLowerCase();
 
-        return !FILTERS.matcher(href).matches()
-                && href.startsWith("https://store.playstation.com/en-us/") && href.contains("alldeals");
+        return !FILTERS.matcher(href).matches() && href.contains("alldeals");
     }
 
     @Override

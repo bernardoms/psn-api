@@ -23,5 +23,4 @@ public class Application extends SpringBootServletInitializer {
     @Bean CrawlerConfig crawlerConfig(){
        return new CrawlerConfig();
     }
-
 }

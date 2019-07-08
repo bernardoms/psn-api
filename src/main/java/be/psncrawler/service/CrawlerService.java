@@ -8,6 +8,7 @@ import edu.uci.ics.crawler4j.crawler.CrawlController;
 import edu.uci.ics.crawler4j.fetcher.PageFetcher;
 import edu.uci.ics.crawler4j.robotstxt.RobotstxtConfig;
 import edu.uci.ics.crawler4j.robotstxt.RobotstxtServer;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
@@ -20,6 +21,7 @@ public class CrawlerService {
 
     private CrawlerConfig crawlConfig;
 
+    @Autowired
     public CrawlerService(CrawlerConfig crawlConfig){
         this.crawlConfig = crawlConfig;
     }
@@ -31,6 +33,7 @@ public class CrawlerService {
         int numberOfCrawlers = Integer.parseInt(crawlConfig.getNumCrawlers());
 
         CrawlConfig config = new CrawlConfig();
+
         config.setCrawlStorageFolder(crawlStorageFolder);
         config.setMaxDepthOfCrawling(Integer.parseInt(crawlConfig.getMaxDepth()));
 

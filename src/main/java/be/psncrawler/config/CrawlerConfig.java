@@ -18,6 +18,8 @@ public class CrawlerConfig {
     private String maxDepth;
     @Value("storageFolder")
     private String storageFolder;
+    @Value("urlStartingWith")
+    private String urlStartingWith;
 
     public List<String> getUrl() {
         return url;
@@ -49,5 +51,13 @@ public class CrawlerConfig {
 
     public void setStorageFolder(String storageFolder) {
         this.storageFolder = storageFolder;
+    }
+
+    public String getUrlStartingWith() {
+        return urlStartingWith;
+    }
+
+    public void setUrlStartingWith(String urlStartingWith) {
+        this.urlStartingWith = urlStartingWith;
     }
 }
